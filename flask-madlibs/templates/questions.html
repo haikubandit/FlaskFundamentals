@@ -1,0 +1,21 @@
+
+
+
+
+
+
+{% extends 'base.html'  %}
+{% block title %}My Madlib Questions{% endblock %}
+
+{% block content %}
+<h1>Enter Story Inputs</h1>
+<form action="/story">
+    {% for prompt in prompts %}
+    <label for="{{prompt}}">{{prompt}}:</label>
+    <input type="text" placeholder="enter {{prompt}}" name="{{prompt}}">
+    {%  endfor %}
+    <button>Submit</button>
+</form>
+{% endblock %}
+
+

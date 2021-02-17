@@ -18,9 +18,11 @@ class Story:
         'I love to eat a good mango.'
     """
 
-    def __init__(self, words, text):
+    def __init__(self, code, title, words, text):
         """Create story with words and template text."""
 
+        self.code = code
+        self.title = title
         self.prompts = words
         self.template = text
 
@@ -37,9 +39,15 @@ class Story:
 
 # Here's a story to get you started
 
-
-story = Story(
+story1 = Story(
     ["place", "noun", "verb", "adjective", "plural_noun"],
-    """Once upon a time in a long-ago {place}, there lived a
-       large {adjective} {noun}. It loved to {verb} {plural_noun}."""
+    """Once upon a time in a long-ago {place}, there lived a large {adjective} {noun}. It loved to {verb} {plural_noun}.""")
+
+
+story2 = Story(
+    ["name", "adjective", "occupation", "noun"],
+    """Once upon a time in a galaxy far, far away, {name}, a {adjective} {occupation} discovered a new {noun}. """
 )
+
+# Make dict of {code:story, code:story, ...}
+stories = {s.code: s for s in [story1, story2]}

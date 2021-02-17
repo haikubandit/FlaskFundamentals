@@ -11,12 +11,15 @@
     <h1>Madlibs</h1>
 
     <main id="content">
-        <form action="/story">
-            {% for prompt in prompts %}
-            <label for="{{prompt}}">{{prompt}}:</label>
-            <input type="text" placeholder="enter {{prompt}}" name="{{prompt}}">
-            {%  endfor %}
-            <button>Submit</button>
+        <form action="/questions">
+            <select name="story_id">
+              {% for story in stories %}
+                <option value="{{ story.code }}">
+                  {{ story.title }}
+                </option>
+              {% endfor %}
+            </select>
+            <button>Go</button>
           </form>
     </main>
     <section id="story">
