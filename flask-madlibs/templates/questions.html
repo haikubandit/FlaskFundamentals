@@ -14,6 +14,7 @@
     <label for="{{prompt}}">{{prompt}}:</label>
     <input type="text" placeholder="enter {{prompt}}" name="{{prompt}}">
     {%  endfor %}
+    <input type="hidden" name="story_id" value="{{ story_id}}">
     <button>Submit</button>
 </form>
 {% endblock %}

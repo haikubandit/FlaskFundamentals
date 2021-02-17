@@ -2,21 +2,12 @@ from flask import Flask, request, render_template
 from random import randint,  choice, sample
 from flask_debugtoolbar import DebugToolbarExtension
 
-import stories
+from stories import stories
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "a-secret-key"
 debug = DebugToolbarExtension(app)
-
-
-
-# @app.route('/')
-# def madlib_form():
-#     """Shows home page"""
-
-#     prompts = story.prompts
-#     return render_template('base.html', prompts=prompts)
 
 
 @app.route("/")
@@ -38,14 +29,6 @@ def ask_questions():
                            story_id=story_id,
                            title=story.title,
                            prompts=prompts)
-
-# @app.route('/story')
-# def story_page():
-#     """Displays user story"""
-
-#     text = story.generate(request.args)
-
-#     return render_template("story.html", text=text)
 
 @app.route("/story")
 def show_story():
