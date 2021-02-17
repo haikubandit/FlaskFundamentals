@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
     <title>Madlibs</title>
 </head>
 <body>
     <h1>Madlibs</h1>
+
+    <main id="content">
+        <form action="/story">
+            <label for="place">Place:</label>
+            <input type="text" placeholder="enter a place" name="place">
+            <!-- <label for="noun">Noun:</label>
+            <input type="text" placeholder="enter a place" name="noun">
+            <label for="verb">Verb:</label>
+            <input type="text" placeholder="enter a verb" name="verb">
+            <label for="adjective">Adjective:</label>
+            <input type="text" placeholder="enter an adjective" name="adjective">
+            <label for="plural_noun">Plural Noun:</label>
+            <input type="text" placeholder="enter a plural noun" name="plural_noun"> -->
+            <button>Submit</button>
+          </form>
+    </main>
+    <section id="story">
+        {% block content %} {% endblock %}
+    </section>
 </body>
 </html>

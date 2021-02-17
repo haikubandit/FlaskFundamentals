@@ -1,0 +1,21 @@
+/* * {
+	box-sizing: border-box;
+} */
+
+h1 {
+	display: block;
+}
+
+main {
+	display: flex;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	/* background-color: dodgerblue; */
+}
+
+input {
+	margin-bottom: .75rem;
+}
