@@ -40,11 +40,15 @@ class Story:
 # Here's a story to get you started
 
 story1 = Story(
+    "history",
+    "A History Tale",
     ["place", "noun", "verb", "adjective", "plural_noun"],
     """Once upon a time in a long-ago {place}, there lived a large {adjective} {noun}. It loved to {verb} {plural_noun}.""")
 
 
 story2 = Story(
+    "adventure",
+    "A Scifi Tale",
     ["name", "adjective", "occupation", "noun"],
     """Once upon a time in a galaxy far, far away, {name}, a {adjective} {occupation} discovered a new {noun}. """
 )
