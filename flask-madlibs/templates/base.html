@@ -12,16 +12,10 @@
 
     <main id="content">
         <form action="/story">
-            <label for="place">Place:</label>
-            <input type="text" placeholder="enter a place" name="place">
-            <!-- <label for="noun">Noun:</label>
-            <input type="text" placeholder="enter a place" name="noun">
-            <label for="verb">Verb:</label>
-            <input type="text" placeholder="enter a verb" name="verb">
-            <label for="adjective">Adjective:</label>
-            <input type="text" placeholder="enter an adjective" name="adjective">
-            <label for="plural_noun">Plural Noun:</label>
-            <input type="text" placeholder="enter a plural noun" name="plural_noun"> -->
+            {% for prompt in prompts %}
+            <label for="{{prompt}}">{{prompt}}:</label>
+            <input type="text" placeholder="enter {{prompt}}" name="{{prompt}}">
+            {%  endfor %}
             <button>Submit</button>
           </form>
     </main>

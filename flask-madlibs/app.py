@@ -6,25 +6,21 @@ from stories import *
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = "chickenzarecool21837"
+app.config['SECRET_KEY'] = "a-secret-key"
 debug = DebugToolbarExtension(app)
 
 
 @app.route('/')
-def home_page():
+def madlib_form():
     """Shows home page"""
-    return render_template('base.html')
+    prompts = story.prompts
+    return render_template('base.html', prompts=prompts)
 
 
 @app.route('/story')
 def story_page():
-    """Greets and compliments a user"""
-    # noun = request.args["noun"]
-    # verb = request.args["verb"]
-    # adjective = request.args["adjective"]
-    # plural_noun = request.args["plural_noun"]
-    index = story.prompts.index('place')
-    story.prompts[index] = request.args["place"]
+    """Displays user story"""
+    story.generate(request.args)
     your_story = story.template
-    # nice_thing = choice(COMPLIMENTS)
+
     return render_template("story.html", your_story=your_story)
